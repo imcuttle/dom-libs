@@ -12,7 +12,9 @@ const fallbackScrollerContainer = (() => {
   return window.document.scrollingElement || (IS_SAFARI ? window.document.body : window.document.documentElement)
 })()
 
-export default function findScrollContainer(el, { overflowStyleName = 'overflowY' } = {}) {
+export type FindScrollContainerOpts = { overflowStyleName?: string }
+
+export default function findScrollContainer(el, { overflowStyleName = 'overflowY' }: FindScrollContainerOpts = {}) {
   const window = getWindow(el)
   return (
     findParent(el, (node) => {
@@ -24,7 +26,7 @@ export default function findScrollContainer(el, { overflowStyleName = 'overflowY
   )
 }
 
-export function findScroller(el, opts) {
+export function findScroller(el, opts: FindScrollContainerOpts = {}) {
   const container = findScrollContainer(el, opts)
   if (container === fallbackScrollerContainer) {
     return typeof window !== 'undefined' ? window : typeof document !== 'undefined' ? document : null

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>getRect</title>
+    <style>
+      body {
+        height: 200vh;
+        width: 200vw;
+      }
+
+      .rect {
+        background-color: cadetblue;
+        width: 100px;
+        height: 100px;
+      }
+
+      #fixed {
+        top: 20px;
+        left: 20px;
+        position: fixed;
+      }
+
+      #absolute {
+        position: absolute;
+        bottom: 100px;
+        left: 100px;
+      }
+
+      #normal {
+        margin-left: 200px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fixed" class="rect"></div>
+    <div id="absolute" class="rect"></div>
+    <div id="normal" class="rect"></div>
+  </body>
+</html>

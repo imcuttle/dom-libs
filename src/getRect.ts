@@ -1,5 +1,10 @@
 import getWindow from './getWindow'
 
+/**
+ * Get the absolute rect of element
+ * @param el
+ * @return {{width: number, height: number, left: number, top: number}}
+ */
 export default function getRect(el: Element) {
   const window = getWindow(el) || { scrollX: 0, scrollY: 0 }
   const rect = el.getBoundingClientRect()

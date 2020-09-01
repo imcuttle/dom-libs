@@ -7,6 +7,9 @@ const root = __dirname + '/examples'
 const entries = globby.sync(['*.html'], { cwd: root }).map((name) => name.replace(/\..+$/, ''))
 
 module.exports = {
+  devServer: {
+    port: process.env.TEST_SERVER_PORT || 7777
+  },
   entry: entries.reduce((acc, name) => {
     acc[name] = nps.join(root, name)
     return acc

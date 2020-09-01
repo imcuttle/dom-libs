@@ -2,14 +2,8 @@
  * Module dependencies.
  */
 
-import getDocument from 'get-document'
+import * as getDocument from 'get-document'
 import needsIEFallback from './needsIeFallback'
-
-/**
- * Module exports.
- */
-
-export default getWindow
 
 /**
  * Returns `true` if `w` is a Window object, or `false` otherwise.
@@ -55,3 +49,9 @@ function getWindow(node) {
     return doc && (doc.defaultView || doc.parentWindow)
   }
 }
+
+/**
+ * Module exports.
+ */
+
+export default getWindow
