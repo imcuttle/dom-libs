@@ -17,3 +17,6 @@ export { default as getOffsetBy } from './getOffsetBy'
 
 export * from './scrollTo'
 export { default as scrollTo } from './scrollTo'
+
+export * from './findScrollContainer'
+export { default as findScrollContainer } from './findScrollContainer'
