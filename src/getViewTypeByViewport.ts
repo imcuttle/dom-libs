@@ -5,6 +5,11 @@ import * as getDocument from 'get-document'
  * 判断与当前
  */
 
+/**
+ * @public
+ * @param el {Element}
+ * @return {ReturnType<typeof getViewTypeBy>}
+ */
 export default function getViewTypeByViewport(el): ReturnType<typeof getViewTypeBy> {
   const document = getDocument(el)
   if (!document) return

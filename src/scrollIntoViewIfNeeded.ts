@@ -11,20 +11,20 @@ type ScrollIntoViewIfNeededOptions = {
   offsetRight?: number
 }
 
-export default function scrollIntoViewIfNeeded(
-  el: any,
-  {
-    scroller,
-    behavior,
-    offsetTop = 10,
-    offsetLeft = 10,
-    offsetBottom = 10,
-    offsetRight = 10
-  }: ScrollIntoViewIfNeededOptions = {}
-) {
-  // if (el && typeof el.scrollIntoViewIfNeeded === 'function') {
-  //     return el.scrollIntoViewIfNeeded();
-  // }
+/**
+ * Like `Element.scrollIntoViewIfNeeded`
+ * @public
+ * @param el {any}
+ * @param [opts={}] {object}
+ * @param [opts.scroller] {Element}
+ * @param [opts.behavior] {"auto" | "smooth"}
+ * @param [opts.offsetTop] {number}
+ * @param [opts.offsetLeft] {number}
+ * @param [opts.offsetBottom] {number}
+ * @param [opts.offsetRight] {number}
+ */
+export default function scrollIntoViewIfNeeded(el: any, opts: ScrollIntoViewIfNeededOptions = {}) {
+  const { scroller, behavior, offsetTop = 10, offsetLeft = 10, offsetBottom = 10, offsetRight = 10 } = opts
   if (scroller) {
     return scrollIfNeed(el, scroller)
   }

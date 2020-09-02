@@ -4,11 +4,19 @@ export type FindParentOptions = {
   parentType?: 'parentElement' | 'parentNode'
 }
 
+/**
+ * @public
+ * @param el {Element} Start element
+ * @param match {(node, ctx) => boolean | string} selector or match function
+ * @param [opts={}] {Object}
+ * @param [opts.parentType='parentElement'] {'parentElement' | 'parentNode'}
+ */
 export default function findParent<T = Element>(
   el: T,
   match: ((node: T, ctx: visit.IContext<T>) => boolean) | string,
-  { parentType = 'parentElement' }: FindParentOptions = {}
+  opts: FindParentOptions = {}
 ) {
+  const { parentType = 'parentElement' } = opts
   let resultNode
 
   visit<T>(

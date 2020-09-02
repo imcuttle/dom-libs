@@ -14,6 +14,12 @@ export const VIEW_TYPES = {
 
 export type ViewType = 'contain' | 'intersection' | 'parallel'
 
+/**
+ * Returns the `el` position's relation in `byEl` like `{xType: 'contain' | 'intersection' | 'parallel', yType: 'contain' | 'intersection' | 'parallel', elOffset: object, byRect: object}`
+ * @public
+ * @param el {Element}
+ * @param [byEl=findScrollContainer(el)] {Element}
+ */
 export default function getViewTypeBy(
   el,
   byEl = findScrollContainer(el)

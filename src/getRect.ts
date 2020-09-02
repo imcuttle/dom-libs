@@ -2,7 +2,7 @@ import getWindow from './getWindow'
 
 /**
  * Get the absolute rect of element
- * @param el
+ * @param el {Element}
  * @return {{width: number, height: number, left: number, top: number}}
  */
 export default function getRect(el: Element) {

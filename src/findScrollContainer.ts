@@ -14,7 +14,16 @@ const fallbackScrollerContainer = (() => {
 
 export type FindScrollContainerOpts = { overflowStyleName?: string }
 
-export default function findScrollContainer(el, { overflowStyleName = 'overflowY' }: FindScrollContainerOpts = {}) {
+/**
+ * Find scroll container which can emits `scroll` event
+ * @public
+ * @param el {any} start element
+ * @param [opts={}] {object}
+ * @param [opts.overflowStyleName='overflowY'] {string}
+ * @return {null | Element}
+ */
+export default function findScrollContainer(el, opts: FindScrollContainerOpts = {}) {
+  const { overflowStyleName = 'overflowY' } = opts
   const window = getWindow(el)
   return (
     findParent(el, (node) => {
@@ -26,6 +35,13 @@ export default function findScrollContainer(el, { overflowStyleName = 'overflowY
   )
 }
 
+/**
+ * Find scroller which can has `scrollTo` method
+ * @public
+ * @param el {any} start element
+ * @param [opts] {any} see [findScrollContainer](#findScrollContainer)
+ * @return {null | Element | Window}
+ */
 export function findScroller(el, opts: FindScrollContainerOpts = {}) {
   const container = findScrollContainer(el, opts)
   if (container === fallbackScrollerContainer) {
