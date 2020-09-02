@@ -2,6 +2,7 @@
  * @file main
  * @author imcuttle
  * @date 2018/4/4
+ * @jest-environment jsdom
  */
 import { findParent } from '../src'
 

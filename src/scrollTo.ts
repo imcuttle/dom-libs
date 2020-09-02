@@ -1,4 +1,4 @@
-export default function scrollTo(scroller: Element, { top, left, behavior }: ScrollToOptions) {
+export default function scrollTo(scroller: any, { top, left, behavior }: ScrollToOptions) {
   const fallbackScroll = () => {
     scroller.scrollLeft = left
     scroller.scrollTop = top

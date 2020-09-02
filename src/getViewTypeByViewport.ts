@@ -9,7 +9,7 @@ export default function getViewTypeByViewport(el): ReturnType<typeof getViewType
   const document = getDocument(el)
   if (!document) return
   const viewportElem = getViewportElement(document)
-  document.body.appendBody(viewportElem)
+  document.body.appendChild(viewportElem)
   const result = getViewTypeBy(el, viewportElem)
   document.body.removeChild(viewportElem)
   return result

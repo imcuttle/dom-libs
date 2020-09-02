@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>getViewTypeBy</title>
+    <style>
+      body {
+        width: 200vw;
+        height: 200vh;
+      }
+      .container {
+        position: relative;
+        /*width: 100px;*/
+        /*height: 100px;*/
+
+        flex: 1;
+      }
+
+      .a {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 1px solid cadetblue;
+      }
+      .b {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 1px solid sandybrown;
+      }
+      .stage {
+        display: flex;
+        width: 100vw;
+        height: 120px;
+
+        margin-bottom: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <div id="parallel" class="container">
+        <div class="a" style="left: 110px"></div>
+        <div class="b"></div>
+      </div>
+
+      <div id="intersection" class="container">
+        <div class="a" style="left: 50px"></div>
+        <div class="b"></div>
+      </div>
+
+      <div id="contain" class="container">
+        <div class="a"></div>
+        <div class="b"></div>
+      </div>
+    </div>
+
+    <div style="height: 220px" class="stage">
+      <div id="parallelY" class="container">
+        <div class="a" style="top: 110px"></div>
+        <div class="b"></div>
+      </div>
+
+      <div id="intersectionY" class="container">
+        <div class="a" style="top: 50px"></div>
+        <div class="b"></div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div id="viewportRect" class="b"></div>
+    </div>
+  </body>
+</html>

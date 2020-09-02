@@ -12,7 +12,7 @@ type ScrollIntoViewIfNeededOptions = {
 }
 
 export default function scrollIntoViewIfNeeded(
-  el,
+  el: any,
   {
     scroller,
     behavior,
