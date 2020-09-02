@@ -20,3 +20,12 @@ export { default as scrollTo } from './scrollTo'
 
 export * from './findScrollContainer'
 export { default as findScrollContainer } from './findScrollContainer'
+
+export * from './getViewTypeBy'
+export { default as getViewTypeBy } from './getViewTypeBy'
+
+export * from './getViewTypeByViewport'
+export { default as getViewTypeByViewport } from './getViewTypeByViewport'
+
+export * from './scrollIntoViewIfNeeded'
+export { default as scrollIntoViewIfNeeded } from './scrollIntoViewIfNeeded'
